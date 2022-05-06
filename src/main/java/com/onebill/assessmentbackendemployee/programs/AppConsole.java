@@ -65,6 +65,7 @@ public class AppConsole {
 				}
 				String typecheck = "select employeeType from Employee where employeeId=:id";
 				Query query1 = manager.createQuery(typecheck);
+				query1.setParameter("id", id);
 				String type = (String) query1.getSingleResult();
 				String typelow = type.toLowerCase();
 				int j = 0;
@@ -117,6 +118,7 @@ public class AppConsole {
 							break;
 						case 3:
 							j = 1;
+							break;
 						default:
 							System.out.println("Invalid Input! Enter Again");
 							break;
